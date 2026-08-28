@@ -1,27 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { I18nProvider } from "@/lib/i18n";
 import { SiteNav } from "@/components/site-nav";
 import { Hero } from "@/components/hero";
-import { Story } from "@/components/story";
+import { Atmosphere } from "@/components/atmosphere";
 import { Menu } from "@/components/menu";
-import { Gallery } from "@/components/gallery";
 import { Guests } from "@/components/guests";
-import { Reserve } from "@/components/reserve";
+import { Contact } from "@/components/contact";
 import { SiteFooter } from "@/components/site-footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Minoj — Trattoria in Trastevere, Rome" },
+      { title: "MINOJ — Family Style Restaurant в Ташкенте" },
       {
         name: "description",
         content:
-          "Minoj is a Roman trattoria serving handmade pasta and wood-fired cooking. View the menu, browse the rooms and reserve a table.",
+          "MINOJ — семейный ресторан: zamonaviylik va mazali ta’mni birlashtirgan joy. Меню, атмосфера, отзывы гостей и контакты.",
       },
-      { property: "og:title", content: "Minoj — Trattoria in Trastevere, Rome" },
+      { property: "og:title", content: "MINOJ — Family Style Restaurant" },
       {
         property: "og:description",
         content:
-          "Handmade pasta, wood fire and quiet rooms in Trastevere. Reserve your table at Minoj.",
+          "Семейный ресторан MINOJ: тёплая атмосфера, домашняя кухня и большие столы для компании.",
       },
       { property: "og:type", content: "restaurant" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -32,15 +32,16 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main>
-      <SiteNav />
-      <Hero />
-      <Story />
-      <Menu />
-      <Gallery />
-      <Guests />
-      <Reserve />
-      <SiteFooter />
-    </main>
+    <I18nProvider>
+      <main>
+        <SiteNav />
+        <Hero />
+        <Atmosphere />
+        <Menu />
+        <Guests />
+        <Contact />
+        <SiteFooter />
+      </main>
+    </I18nProvider>
   );
 }
