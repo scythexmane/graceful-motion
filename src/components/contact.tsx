@@ -17,7 +17,7 @@ export function Contact() {
     {
       icon: Link2,
       label: t.contact.taplink,
-      value: "taplink.cc/minoj.official.uz",
+      value: "taplink.cc",
       note: t.contact.taplinkNote,
       href: LINKS.taplink,
     },
@@ -93,7 +93,7 @@ export function Contact() {
                 <span className="eyebrow block text-muted-foreground transition-colors duration-[700ms] group-hover:text-[color:var(--cream)]/60">
                   {c.note}
                 </span>
-                <span className="font-display mt-3 block text-2xl leading-snug transition-colors duration-[700ms] group-hover:text-[color:var(--cream)] md:text-[1.75rem]">
+                <span className="font-display mt-3 block text-xl leading-snug break-words transition-colors duration-[700ms] group-hover:text-[color:var(--cream)] md:text-[1.6rem]">
                   {c.value}
                 </span>
               </span>
