@@ -27,7 +27,7 @@ const QUOTES = [
 
 export function Guests() {
   const [i, setI] = useState(0);
-  const q = QUOTES[i];
+  const q = QUOTES[i] ?? QUOTES[0]!;
 
   return (
     <section

@@ -32,8 +32,10 @@ const MENU: Record<string, Item[]> = {
 
 const CATEGORIES = Object.keys(MENU);
 
+const itemsFor = (c: string): Item[] => MENU[c] ?? [];
+
 export function Menu() {
-  const [active, setActive] = useState(CATEGORIES[0]);
+  const [active, setActive] = useState<string>(CATEGORIES[0] ?? "Antipasti");
 
   return (
     <section
@@ -91,7 +93,7 @@ export function Menu() {
                 exit: { transition: { staggerChildren: 0.025, staggerDirection: -1 } },
               }}
             >
-              {MENU[active].map((item) => (
+              {itemsFor(active).map((item) => (
                 <motion.li
                   key={item.name}
                   variants={{
