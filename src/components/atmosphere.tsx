@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "motion/react";
 import { MaskedLines, Reveal } from "./motion-primitives";
 import { useI18n } from "@/lib/i18n";
 import reel1 from "@/assets/reel-1.mp4.asset.json";
@@ -8,7 +8,7 @@ import reel3 from "@/assets/reel-3.mp4.asset.json";
 
 const REELS = [reel1.url, reel2.url, reel3.url];
 
-function Reel({ src, index, y }: { src: string; index: number; y: ReturnType<typeof useTransform> }) {
+function Reel({ src, index, y }: { src: string; index: number; y: MotionValue<string> }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [muted, setMuted] = useState(true);
 
