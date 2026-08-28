@@ -45,7 +45,7 @@
   --ink: oklch(0.22 0.02 160);
   --petrol: oklch(0.32 0.045 205);
   --petrol-deep: oklch(0.25 0.04 205);
-  --ember: oklch(0.63 0.18 42);
+  --ember: oklch(0.55 0.213 26);
   --olive: oklch(0.42 0.09 148);
 
   --background: var(--cream);
@@ -79,6 +79,13 @@
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    font-size: 17.5px;
+  }
+
+  @media (min-width: 1280px) {
+    html {
+      font-size: 18.5px;
+    }
   }
 
   body {
